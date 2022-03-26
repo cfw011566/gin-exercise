@@ -1,12 +1,13 @@
 {
-    "title": "Title 1 update",
-    "description": "description 1 update",
+    "id": 1,
+    "title": "Title 1",
+    "description": "description 1 updated",
     "url": "https://www.youtube.com/video_1",
     "author": {
         "id": 1,
         "firstname": "First",
         "lastname": "Last",
-        "age": 20,
+        "age": 21,
         "email": "email@example.com"
     }
 }

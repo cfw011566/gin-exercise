@@ -7,5 +7,11 @@ import (
 )
 
 func ValidateCoolTitle(field validator.FieldLevel) bool {
-	return strings.Contains(field.Field().String(), "Cool")
+	if strings.Contains(field.Field().String(), "Cool") {
+		return true
+	}
+	if strings.Contains(field.Field().String(), "Title") {
+		return true
+	}
+	return false
 }

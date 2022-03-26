@@ -47,8 +47,37 @@ func (c *controller) Save(ctx *gin.Context) error {
 	if err != nil {
 		return err
 	}
-	c.service.Save(video)
-	return nil
+	return c.service.Save(video)
+}
+
+func (c *controller) Update(ctx *gin.Context) error {
+	var video entity.Video
+	err := ctx.ShouldBindJSON(&video)
+	if err != nil {
+		return err
+	}
+
+	id, err := strconv.ParseUint(ctx.Param("id"), 0, 0)
+	if err != nil {
+		return err
+	}
+	video.ID = id
+
+	err = validate.Struct(video)
+	if err != nil {
+		return err
+	}
+	return c.service.Update(video)
+}
+
+func (c *controller) Delete(ctx *gin.Context) error {
+	var video entity.Video
+	id, err := strconv.ParseUint(ctx.Param("id"), 0, 0)
+	if err != nil {
+		return err
+	}
+	video.ID = id
+	return c.service.Delete(video)
 }
 
 func (c *controller) Update(ctx *gin.Context) error {
