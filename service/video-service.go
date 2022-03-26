@@ -2,7 +2,6 @@ package service
 
 import (
 	"example/golang-gin-poc/entity"
-	"example/golang-gin-poc/repository"
 	"fmt"
 )
 
@@ -14,13 +13,11 @@ type VideoService interface {
 }
 
 type videoService struct {
-	videoRepository repository.VideoRepository
+	videos []entity.Video
 }
 
-func New(repo repository.VideoRepository) VideoService {
-	return &videoService{
-		videoRepository: repo,
-	}
+func New() VideoService {
+	return &videoService{}
 }
 
 func (service *videoService) Save(video entity.Video) error {
@@ -52,5 +49,5 @@ func (service *videoService) Delete(video entity.Video) error {
 }
 
 func (service *videoService) FindAll() []entity.Video {
-	return service.videoRepository.FindAll()
+	return service.videos
 }
