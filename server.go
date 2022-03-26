@@ -4,7 +4,6 @@ import (
 	"example/golang-gin-poc/controller"
 	"example/golang-gin-poc/dto"
 	"example/golang-gin-poc/middlewares"
-	"example/golang-gin-poc/repository"
 	"example/golang-gin-poc/service"
 	"io"
 	"net/http"
@@ -14,10 +13,9 @@ import (
 )
 
 var (
-	videoRepository repository.VideoRepository = repository.NewVideoRepository()
-	videoService    service.VideoService       = service.New()
-	loginService    service.LoginService       = service.NewLoginService()
-	jwtService      service.JWTService         = service.NewJWTService()
+	videoService service.VideoService = service.New()
+	loginService service.LoginService = service.NewLoginService()
+	jwtService   service.JWTService   = service.NewJWTService()
 
 	videoController controller.VideoController = controller.New(videoService)
 	loginController controller.LoginController = controller.NewLoginController(loginService, jwtService)
@@ -29,8 +27,6 @@ func setupLogOutput() {
 }
 
 func main() {
-	defer videoRepository.CloseDB()
-
 	// setupLogOutput()
 
 	server := gin.New()
