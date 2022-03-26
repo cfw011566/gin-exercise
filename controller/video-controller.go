@@ -80,36 +80,6 @@ func (c *controller) Delete(ctx *gin.Context) error {
 	return c.service.Delete(video)
 }
 
-func (c *controller) Update(ctx *gin.Context) error {
-	var video entity.Video
-	err := ctx.ShouldBindJSON(&video)
-	if err != nil {
-		return err
-	}
-
-	id, err := strconv.ParseUint(ctx.Param("id"), 0, 0)
-	video.ID = id
-
-	err = validate.Struct(video)
-	if err != nil {
-		return err
-	}
-	c.service.Update(video)
-	return nil
-}
-
-func (c *controller) Delete(ctx *gin.Context) error {
-	var video entity.Video
-	id, err := strconv.ParseUint(ctx.Param("id"), 0, 0)
-	if err != nil {
-		return err
-	}
-
-	video.ID = id
-	c.service.Delete(video)
-	return nil
-}
-
 func (c *controller) ShowAll(ctx *gin.Context) {
 	videos := c.service.FindAll()
 	data := gin.H{

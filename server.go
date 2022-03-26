@@ -15,7 +15,7 @@ import (
 
 var (
 	videoRepository repository.VideoRepository = repository.NewVideoRepository()
-	videoService    service.VideoService       = service.New(videoRepository)
+	videoService    service.VideoService       = service.New()
 	loginService    service.LoginService       = service.NewLoginService()
 	jwtService      service.JWTService         = service.NewJWTService()
 
