@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Cool 3",
+    "description": "description 3",
+    "url": "https://www.youtube.com/watch?v=sDJLQMZzzM4&list=PL3eAkoh7fypr8zrkiygiY1e9osoqjoV9w&index=5",
+    "author": {
+      "id": 0,
+      "firstname": "",
+      "lastname": "",
+      "age": 0,
+      "email": ""
+    }
+  },
+  {
+    "id": 2,
+    "title": "Title 2",
+    "description": "description 3",
+    "url": "https://www.youtube.com/video 2",
+    "author": {
+      "id": 0,
+      "firstname": "",
+      "lastname": "",
+      "age": 0,
+      "email": ""
+    }
+  }
+]
