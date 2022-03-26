@@ -5,19 +5,33 @@
 [GIN-debug] GET    /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
 [GIN-debug] HEAD   /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
 [GIN-debug] Loaded HTML Templates (4): 
-	- 
-	- footer.html
 	- header.html
 	- index.html
+	- 
+	- footer.html
 
 [GIN-debug] POST   /login                    --> main.main.func1 (3 handlers)
 [GIN-debug] GET    /api/videos               --> main.main.func2 (4 handlers)
 [GIN-debug] POST   /api/videos               --> main.main.func3 (4 handlers)
+[GIN-debug] PUT    /api/videos/:id           --> main.main.func4 (4 handlers)
+[GIN-debug] DELETE /api/videos/:id           --> main.main.func5 (4 handlers)
 [GIN-debug] GET    /view/videos              --> example/golang-gin-poc/controller.VideoController.ShowAll-fm (3 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :5000
-::1 - [26 Mar 22 10:45 CST] GET /api/videos 200 324.268µs
-::1 - [26 Mar 22 10:45 CST] POST /login 200 258.124µs
-::1 - [26 Mar 22 10:45 CST] GET /api/videos 200 135.615µs
-::1 - [26 Mar 22 10:46 CST] GET /api/videos 200 92.179µs
+::1 - [26 Mar 22 20:19 CST] GET /api/videos 200 517.601µs
+::1 - [26 Mar 22 20:19 CST] DELETE /api/videos/0 400 267.698µs
+::1 - [26 Mar 22 20:19 CST] POST /api/videos 200 295.51µs
+::1 - [26 Mar 22 20:19 CST] GET /api/videos 200 93.384µs
+::1 - [26 Mar 22 20:19 CST] PUT /api/videos/0 400 92.907µs
+::1 - [26 Mar 22 20:20 CST] PUT /api/videos/0 400 103.147µs
+::1 - [26 Mar 22 20:20 CST] GET /api/videos 200 121.563µs
+::1 - [26 Mar 22 20:21 CST] PUT /api/videos/0 400 114.533µs
+::1 - [26 Mar 22 20:21 CST] PUT /api/videos/0 200 175.501µs
+::1 - [26 Mar 22 20:21 CST] GET /api/videos 200 115.573µs
+::1 - [26 Mar 22 20:21 CST] GET /api/videos 200 95.176µs
+::1 - [26 Mar 22 20:22 CST] PUT /api/videos/0 200 147.46µs
+::1 - [26 Mar 22 20:22 CST] GET /api/videos 200 93.077µs
+::1 - [26 Mar 22 20:23 CST] GET /api/videos 200 502.27µs
+::1 - [26 Mar 22 20:23 CST] DELETE /api/videos/0 200 104.842µs
+::1 - [26 Mar 22 20:24 CST] GET /api/videos 200 92.649µs

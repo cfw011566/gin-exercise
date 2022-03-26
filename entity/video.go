@@ -1,6 +1,7 @@
 package entity
 
 type Person struct {
+	ID        uint64 `json:"id"`
 	FirstName string `json:"firstname" binding:"required"`
 	LastName  string `json:"lastname" binding:"required"`
 	Age       int8   `json:"age" binding:"gte=1,lte=130"`
@@ -8,8 +9,9 @@ type Person struct {
 }
 
 type Video struct {
-	Title       string `json:"title" binding:"min=2,max=10" validate:"is-cool"`
-	Description string `json:"description" binding:"max=20"`
+	ID          uint64 `json:"id"`
+	Title       string `json:"title" binding:"min=2,max=100" validate:"is-cool"`
+	Description string `json:"description" binding:"max=200"`
 	URL         string `json:"url" binding:"required,url"`
 	Author      Person `json:"author" binding:"required"`
 }
