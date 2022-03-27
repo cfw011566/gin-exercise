@@ -3,6 +3,7 @@ package service
 import (
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/golang-jwt/jwt"
@@ -61,6 +62,9 @@ func (jwtSrv *jwtService) GenerateToken(username string, admin bool) string {
 }
 
 func (jwtSrv *jwtService) ValidateToken(tokenString string) (*jwt.Token, error) {
+	if len(strings.Split(tokenString, ".")) < 3 {
+		return nil, fmt.Errorf("invalid token format: %s", tokenString)
+	}
 	return jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		// Signing method validation
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
